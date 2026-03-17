@@ -1,0 +1,6 @@
+name = "u-dashboard-web"
+compatibility_date = "2026-02-25"
+
+[vars]
+NEXT_PUBLIC_API_BASE_URL = "https://u-dashboard.ccczyyyyyy.workers.dev"
+U_MONITOR_WORKER_URL = "https://u-dashboard.ccczyyyyyy.workers.dev"

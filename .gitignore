@@ -1,0 +1,10 @@
+node_modules
+.next
+.open-next
+.wrangler
+dist
+build
+.DS_Store
+coverage
+playwright-report
+test-results

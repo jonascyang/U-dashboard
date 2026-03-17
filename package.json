@@ -1,0 +1,42 @@
+{
+  "name": "u-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "hourly:cycle": "tsx scripts/run-hourly-cycle.ts",
+    "u-monitor:runtime": "tsx scripts/run-u-monitor-runtime.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.5",
+    "next": "^16.0.1",
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "viem": "^2.39.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.10.0",
+    "@types/pg": "^8.15.6",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@opennextjs/cloudflare": "^1.8.4",
+    "drizzle-kit": "^0.31.7",
+    "jsdom": "^28.1.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8",
+    "wrangler": "^4.73.0"
+  }
+}

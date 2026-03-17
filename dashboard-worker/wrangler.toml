@@ -1,0 +1,49 @@
+name = "u-dashboard"
+main = "src/index.ts"
+compatibility_date = "2026-02-25"
+workers_dev = true
+
+[vars]
+ETH_CHAIN_ID = "1"
+U_MONITOR_BSC_CHAIN_ID = "56"
+LENDING_MARKET_ADDRESSES = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "u-dashboard"
+database_id = "08f8dbda-9a9c-4b6d-bb08-a26b27cd1742"
+
+[[queues.producers]]
+binding = "U_MONITOR_EVENTS"
+queue = "u-monitor-events"
+
+[[queues.producers]]
+binding = "U_MONITOR_EVENTS_DLQ"
+queue = "u-monitor-events-dlq"
+
+[[queues.consumers]]
+queue = "u-monitor-events"
+dead_letter_queue = "u-monitor-events-dlq"
+
+[[durable_objects.bindings]]
+name = "BINANCE_U_MONITOR"
+class_name = "BinanceUMonitor"
+
+[[durable_objects.bindings]]
+name = "LBANK_U_MONITOR"
+class_name = "LBankUMonitor"
+
+[[durable_objects.bindings]]
+name = "HTX_U_MONITOR"
+class_name = "HtxUMonitor"
+
+[[durable_objects.bindings]]
+name = "PANCAKE_U_MONITOR"
+class_name = "PancakeUMonitor"
+
+[[migrations]]
+tag = "u-monitor-v1"
+new_sqlite_classes = ["BinanceUMonitor", "LBankUMonitor", "HtxUMonitor", "PancakeUMonitor"]
+
+[triggers]
+crons = ["*/15 * * * *"]
